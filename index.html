@@ -5,78 +5,133 @@
 <title>Academic CV</title>
 
 <style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    scroll-behavior: smooth;
+body{
+    margin:0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial;
+    color:#222;
+    background:#fff;
 }
 
-/* Top nav */
-.nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: white;
-    border-bottom: 1px solid #eee;
-    padding: 12px 0;
-    text-align: center;
+/* TOP NAV (very minimal like reference) */
+.nav{
+    text-align:center;
+    padding:18px 0 10px 0;
+    border-bottom:1px solid #eee;
+    position:fixed;
+    top:0;
+    width:100%;
+    background:white;
+    z-index:100;
 }
 
-.nav a {
-    margin: 0 15px;
-    text-decoration: none;
-    color: #333;
-    font-size: 14px;
+.nav a{
+    margin:0 14px;
+    text-decoration:none;
+    color:#444;
+    font-size:14px;
 }
 
-/* Layout */
-.container {
-    display: flex;
-    margin-top: 60px;
+.nav a:hover{
+    color:#000;
 }
 
-/* Sidebar */
-.sidebar {
-    width: 280px;
-    padding: 30px;
-    border-right: 1px solid #eee;
-    position: fixed;
-    height: 100vh;
+/* MAIN LAYOUT */
+.wrapper{
+    display:flex;
+    max-width:1100px;
+    margin:80px auto;
 }
 
-.sidebar img {
-    width: 120px;
-    border-radius: 50%;
+/* LEFT SIDEBAR */
+.sidebar{
+    width:240px;
+    padding-right:40px;
 }
 
-.content {
-    margin-left: 320px;
-    padding: 30px;
-    max-width: 900px;
+.profile-img{
+    width:160px;
+    height:160px;
+    border-radius:50%;
+    object-fit:cover;
 }
 
-/* Sections */
-section {
-    margin-bottom: 60px;
+.name{
+    font-size:22px;
+    margin-top:12px;
+    font-weight:600;
 }
 
-h2 {
-    border-bottom: 1px solid #eee;
-    padding-bottom: 5px;
+.affiliation{
+    margin-top:5px;
+    font-size:14px;
+    color:#555;
+    line-height:1.5;
 }
 
-/* Paper card */
-.paper {
-    margin-bottom: 20px;
+.links{
+    margin-top:15px;
+    font-size:14px;
+    line-height:1.8;
 }
 
-.paper img {
-    width: 200px;
-    margin-right: 15px;
+.links a{
+    color:#1a0dab;
+    text-decoration:none;
 }
 
-.paper-box {
-    display: flex;
+/* RIGHT CONTENT */
+.content{
+    flex:1;
+}
+
+/* SECTION STYLE (VERY IMPORTANT) */
+.section{
+    margin-bottom:40px;
+}
+
+.section h2{
+    font-size:18px;
+    font-weight:600;
+    border-bottom:1px solid #eee;
+    padding-bottom:6px;
+    margin-bottom:12px;
+}
+
+/* TEXT */
+p{
+    font-size:14px;
+    line-height:1.6;
+    color:#333;
+}
+
+/* PUBLICATION STYLE (CRITICAL FOR MATCH) */
+.paper{
+    display:flex;
+    gap:15px;
+    margin-bottom:18px;
+}
+
+.paper img{
+    width:180px;
+    height:110px;
+    object-fit:cover;
+    border:1px solid #eee;
+}
+
+.paper-title{
+    font-weight:600;
+    font-size:14px;
+}
+
+.paper-meta{
+    font-size:13px;
+    color:#555;
+}
+
+.paper a{
+    font-size:13px;
+    color:#1a0dab;
+    text-decoration:none;
 }
 </style>
 </head>
@@ -85,55 +140,72 @@ h2 {
 
 <!-- NAV -->
 <div class="nav">
-    <a href="#home">Homepage</a>
+    <a href="#">Homepage</a>
     <a href="#about">About Me</a>
     <a href="#news">News</a>
     <a href="#pub">Publications</a>
     <a href="#edu">Educations</a>
+    <a href="#intern">Internships</a>
 </div>
 
+<div class="wrapper">
+
 <!-- SIDEBAR -->
-<div class="sidebar" id="home">
-    <img src="https://via.placeholder.com/120" />
-    <h2>Your Name</h2>
-    <p>University / Lab</p>
-    <p>Email</p>
-    <p>GitHub</p>
+<div class="sidebar">
+    <img class="profile-img" src="https://via.placeholder.com/160">
+    <div class="name">Your Name</div>
+
+    <div class="affiliation">
+        University / Lab<br>
+        First-year PhD / Researcher<br>
+        FL, USA
+    </div>
+
+    <div class="links">
+        📧 Email<br>
+        🔗 <a href="#">GitHub</a><br>
+        🎓 <a href="#">Google Scholar</a>
+    </div>
 </div>
 
 <!-- CONTENT -->
 <div class="content">
 
-<section id="about">
-    <h2>About Me</h2>
-    <p>I am a researcher focusing on AR/VR, computer vision, and HCI.</p>
-</section>
+<div class="section" id="about">
+<h2>About Me</h2>
+<p>I am a researcher focusing on AR/VR, computer vision, and HCI.</p>
+</div>
 
-<section id="news">
-    <h2>News</h2>
-    <p>• 2025 Paper accepted at ICML workshop</p>
-</section>
+<div class="section" id="news">
+<h2>News</h2>
+<p>• 2025 Paper accepted at ICML workshop</p>
+</div>
 
-<section id="pub">
-    <h2>Publications</h2>
+<div class="section" id="pub">
+<h2>Publications</h2>
 
-    <div class="paper-box">
-        <img src="https://via.placeholder.com/200">
-        <div>
-            <b>Paper Title Example</b><br>
-            Author A, Author B<br>
-            IEEE / ICCV 2023<br>
-            <a href="#">PDF</a>
+<div class="paper">
+    <img src="https://via.placeholder.com/180x110">
+    <div>
+        <div class="paper-title">
+            Research on Fuzzy Control of Two-stage System
         </div>
+        <div class="paper-meta">
+            Ming Zhang, Author B<br>
+            ICCR 2023
+        </div>
+        <a href="#">PDF</a>
     </div>
+</div>
 
-</section>
+</div>
 
-<section id="edu">
-    <h2>Educations</h2>
-    <p>Master / Bachelor information here</p>
-</section>
+<div class="section" id="edu">
+<h2>Educations</h2>
+<p>Master / Bachelor information here</p>
+</div>
 
+</div>
 </div>
 
 </body>
