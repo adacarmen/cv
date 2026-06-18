@@ -1,11 +1,84 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>我的个人页面</title>
+<meta charset="UTF-8">
+<title>My Portfolio</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    background: #f5f6f8;
+}
+
+/* 左侧栏 */
+.sidebar {
+    width: 300px;
+    background: #1e1e2f;
+    color: white;
+    height: 100vh;
+    padding: 40px 20px;
+    position: fixed;
+}
+
+.sidebar h1 {
+    font-size: 24px;
+}
+
+.sidebar p {
+    color: #bbb;
+}
+
+/* 右侧内容 */
+.content {
+    margin-left: 320px;
+    padding: 40px;
+    max-width: 900px;
+}
+
+.section {
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+h2 {
+    margin-top: 0;
+}
+</style>
 </head>
 
 <body>
-    <h1>你好，我是我</h1>
-    <p>欢迎访问我的GitHub页面！</p>
+
+<div class="sidebar">
+    <h1>Your Name</h1>
+    <p>Unity / AR Developer</p>
+    <p>📍 Canada</p>
+    <p>📧 your@email.com</p>
+</div>
+
+<div class="content">
+
+    <div class="section">
+        <h2>About Me</h2>
+        <p>I am a developer focusing on AR/VR, Unity, and computer vision projects.</p>
+    </div>
+
+    <div class="section">
+        <h2>Projects</h2>
+        <p>• Unity AR Hand Tracking Project</p>
+        <p>• OpenCV Gesture Recognition System</p>
+    </div>
+
+    <div class="section">
+        <h2>Skills</h2>
+        <p>Unity, C#, OpenCV, AR/VR, Python</p>
+    </div>
+
+</div>
+
 </body>
 </html>
